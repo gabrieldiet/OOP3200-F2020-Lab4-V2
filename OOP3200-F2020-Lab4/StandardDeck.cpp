@@ -119,6 +119,7 @@ void StandardDeck::Shuffle()
 			std_deck.erase(std_deck.begin() + num);
 		}
 
+		// Removes random card
 		if(std_deck[num].GetRank() == removeRank && std_deck[num].GetSuit() == removeSuit)
 		{
 			i--;
