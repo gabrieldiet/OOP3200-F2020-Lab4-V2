@@ -89,39 +89,23 @@ void StandardDeck::DrawNextCard()
 	std::cout << std_deck[0].GetRank() << " of " << std_deck[0].GetSuit();
 }
 
-//void StandardDeck::DrawRandomCard()
-//{
-//	// Draws random card from deck and removes it
-//	int num = rand() % std_deck.size();
-//	std_deck[num];
-//	std_deck.erase(std_deck.begin() + num);
-//
-//	std::cout << std_deck[num].GetRank() << " of " << std_deck[num].GetSuit();
-//	
-//}
-
-void StandardDeck::Shuffle()
+void StandardDeck::DrawRandomCard()
 {
 	// Draws random card from deck and removes it
 	int num = rand() % std_deck.size();
 	std_deck[num];
 	std_deck.erase(std_deck.begin() + num);
 
-	std::cout << "\nA random card has been drawn: ";
-
-	std::cout << std_deck[num].GetRank() << " of " << std_deck[num].GetSuit() << std::endl;
+	std::cout << std_deck[num].GetRank() << " of " << std_deck[num].GetSuit();
 	
-	//int num = rand() % std_deck.size();
+}
+
+void StandardDeck::Shuffle()
+{
+	DrawRandomCard();
+	int num = rand() % std_deck.size();
 	std::string removeRank = std_deck[num].GetRank();
 	std::string removeSuit = std_deck[num].GetSuit();
-
-	std::cout << std::endl << "\nThe deck still has ";
-	std::cout << CardsRemaining();
-	std::cout << " cards remaining." << std::endl;
-	std::cout << "\nPress \'ENTER\' to continue..." << std::endl;
-	std::cin.ignore();	fflush(stdin);
-
-	std::cout << std::endl << "The remaining cards of the deck have been shuffled:\n" << std::endl;
 	
 	// Keeps drawing random cards from deck until there are no more cards
 	for (int i = 0; i < CardsRemaining(); i++)
@@ -134,7 +118,7 @@ void StandardDeck::Shuffle()
 			i--;
 			std_deck.erase(std_deck.begin() + num);
 		}
-		
+
 		if(std_deck[num].GetRank() == removeRank && std_deck[num].GetSuit() == removeSuit)
 		{
 			i--;

@@ -41,20 +41,20 @@ int main()
 	Pause();
 
 	
-	//// Draw a random card and show it
-	//std::cout << std::endl << "A random card has been drawn: ";
-	//standardDeck.DrawRandomCard();
-	//std::cout << std::endl;
-	//Pause();
+	// Draw a random card and show it
+	std::cout << std::endl << "A random card has been drawn: ";
+	standardDeck.DrawRandomCard();
+	std::cout << std::endl;
+	Pause();
 
-	//// Show the deck with the remaining cards
-	//std::cout << std::endl << "The deck still has ";
-	//std::cout << standardDeck.CardsRemaining();
-	//std::cout << " cards remaining." << std::endl;
-	//Pause();
+	// Show the deck with the remaining cards
+	std::cout << std::endl << "The deck still has ";
+	std::cout << standardDeck.CardsRemaining();
+	std::cout << " cards remaining." << std::endl;
+	Pause();
 
 	//// Shuffle the deck and show the result
-	//std::cout << std::endl << "The remaining cards of the deck have been shuffled:\n" << std::endl;
+	std::cout << std::endl << "The remaining cards of the deck have been shuffled:\n" << std::endl;
 	standardDeck.Shuffle();
 	std::cout << std::endl;
 	Pause();
@@ -70,6 +70,8 @@ int main()
 	std::cout << " cards" << std::endl;
 	Pause();
 
+	standardDeck.~StandardDeck();
+	
 }
 
 
